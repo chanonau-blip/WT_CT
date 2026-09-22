@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CategoryCard from '../components/CategoryCard'
 
 function Category() {
-  // 1. กำหนดค่าเริ่มต้นเป็น Array ว่าง เพื่อไม่ให้มีการ์ดขึ้นมาแต่แรก
+
   const [categories, setCategories] = useState([])
 
   const [formData, setFormData] = useState({
@@ -20,9 +20,8 @@ function Category() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!formData.name.trim()) return // ป้องกันการกดบันทึกค่าว่าง
+    if (!formData.name.trim()) return 
 
-    // 2. เมื่อกดบันทึก นำข้อมูลใหม่ไปต่อท้าย Array เพื่อให้การ์ดเด้งขึ้นมา
     setCategories([
       ...categories,
       {
@@ -33,13 +32,12 @@ function Category() {
       },
     ])
 
-    // เคลียร์ฟอร์มให้ว่างหลังกดบันทึก
     setFormData({ id: '', name: '', desc: '' })
   }
 
   return (
     <div className="flex flex-col items-center py-8 px-4">
-      {/* ฟอร์มบันทึกหมวดสินค้า */}
+
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md border border-blue-400 rounded-lg p-6 flex flex-col gap-4 shadow-sm bg-white mb-8"
@@ -87,7 +85,7 @@ function Category() {
         </button>
       </form>
 
-      {/* การ์ดจะแสดงเฉพาะเมื่อมีข้อมูลใน categories แล้วเท่านั้น */}
+
       <div className="flex flex-wrap gap-4 justify-center">
         {categories.map((cat, index) => (
           <CategoryCard key={index} name={cat.name} image={cat.img} />
