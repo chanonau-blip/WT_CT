@@ -1,12 +1,17 @@
 import React from 'react'
 
-function ProductCard({ image, name, price }) {
+function ProductCard({ image, name, price, rating }) {
   return (
-    <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-md w-52 pb-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-in fade-in zoom-in duration-500">
-      <img src={image} alt={name} className="w-full h-44 object-cover mb-3" />
-      <div className="px-4">
-        <h3 className="text-purple-600 font-semibold text-sm">{name}</h3>
-        <p className="text-purple-500 font-medium text-sm mt-0.5">{price}</p>
+    <div className="flex flex-col items-center bg-white rounded-2xl shadow-sm p-4 w-44 hover:shadow-md transition">
+      <div className="w-28 h-28 flex items-center justify-center mb-3">
+        <img src={image} alt={name} className="max-h-full max-w-full object-contain" />
+      </div>
+      <div className="w-full text-center">
+        <h3 className="text-blue-500 font-medium text-xs truncate" title={name}>
+          {name}
+        </h3>
+        <p className="text-purple-600 text-xs font-semibold mt-1">{price}</p>
+        {rating && <p className="text-purple-500 text-xs mt-0.5">{rating}</p>}
       </div>
     </div>
   )

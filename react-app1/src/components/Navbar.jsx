@@ -13,10 +13,10 @@ function Navbar(){
             <Link to="/category" className="hover:text-blue-700">หมวดสินค้า</Link>
             <Link to="/product" className="hover:text-blue-700">สินค้า</Link>
             <Link to="/order" className="hover:text-blue-700">สั่งซื้อ</Link>
-            <Link to="/contact" className="hover:text-blue-700">ตืดต่อเรา</Link>
+            <Link to="/contact" className="hover:text-blue-700">ติดต่อเรา</Link>
             <Link to="/about" className="hover:text-blue-700">เกี่ยวกับเรา</Link>
         </div>
-        <div className="flex items-cemter gap-4">
+        <div className="flex items-center gap-4">
             <Link to="/cart" className="text-blue-500 text-xl">
                 <FaShoppingCart/>
             </Link>

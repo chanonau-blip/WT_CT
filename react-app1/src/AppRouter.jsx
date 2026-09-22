@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
-import category from "./pages/Category";
+import Category from "./pages/Category";
 import Contact from "./pages/Contact";
 import Order from "./pages/Order";
 import Signin from "./pages/Signin";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         errorElement:<NotFound/>,
         children:[
             {index:true, element:<Home/>},
-            {path:'category',element:<category/>},
+            {path:'category',element:<Category/>},
             {path:'product', element:<Product/>},
             {path:'order', element:<Order/>},
             {path:'contact', element:<Contact/>},
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 ])
 
 function AppRouter(){
-    return <RouterProvider router={router}/>
+    return <RouterProvider router={router}/>;
 }
 
-export default AppRouter
+export default AppRouter;
